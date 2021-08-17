@@ -1,10 +1,15 @@
 package com.com.blog.controller;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import com.com.blog.model.Post;
 import com.com.blog.service.PostService;
 import com.com.blog.controller.dto.CMRespDto;
+
+import com.com.blog.view.post.PostUpdateActivity;
+
 
 import java.util.List;
 import java.util.Map;
@@ -45,4 +50,15 @@ public class PostController {
         });
 
     }
+
+    //글 수정 페이지로
+    public void updateForm(Context mConext){
+        Intent intent = new Intent(
+                mConext,
+                PostUpdateActivity.class
+        );
+        mConext.startActivity(intent);
+        
+    }
+
 }
